@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CommentComponent } from './block/comment/comment.component';
+import { CommentComponent } from './blog/comment/comment.component';
 import { CreateblockComponent } from './createblock/createblock.component';
-import { CommentTreeComponent } from './block/comment-tree/comment-tree.component';
+import { CommentTreeComponent } from './blog/comment-tree/comment-tree.component';
 
 const routes: Routes = [
   {path: 'comment', component: CommentComponent, title: 'comment'},
