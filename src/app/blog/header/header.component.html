@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <img src="logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Contact</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button">Search</button>
+      </form>
+      <a href="#"data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-fw fa-user"></i> Login</a>
+    </div>
+  </div>
+</nav>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Đăng nhập</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Tài khoản:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Mật khẩu:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send</button>
+      </div>
+    </div>
+  </div>
+</div>

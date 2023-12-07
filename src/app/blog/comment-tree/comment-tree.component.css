@@ -1,0 +1,21 @@
+.we-comet > li:last-child {
+    margin-bottom: 0;
+}
+.we-comet > li {
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 100%;
+}
+li.post-comment .comet-avatar {
+    display: inline-block;
+    max-width: 30px;
+    vertical-align: top;
+    width: 30px;
+}
+
+.comet-avatar {
+    display: inline-block;
+    max-width: 36px;
+    vertical-align: top;
+    width: 36px;
+}

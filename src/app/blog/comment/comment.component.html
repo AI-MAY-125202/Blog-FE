@@ -1,0 +1,30 @@
+<!-- comment.component.html -->
+<div class="coment-area d-block">
+  <ul *ngIf="comment.open" class="we-comet">
+    <li>
+      <div class="comet-avatar">
+        <img style="border-radius: 50%;vertical-align: middle;
+        border-style: none;" width="25" height="25" src="/assets/image/doraemon.jpg">
+      </div>
+      <div class="we-comment">
+        <div class="btn " style="background-color: rgb(222, 224, 224);">
+          <a class="fw-bold" style="text-decoration: none; color: black; float: left;">Trần Thảo</a><br>
+          <p style="margin-bottom: 0;">{{ comment.text }}</p>
+        </div>
+        <div class="inline-itms">
+          <span style="cursor: pointer;">Phản hồi</span>
+          <a class="we-reply" href="#" title="Reply"><i class="fa fa-reply"></i></a>
+        </div>
+        <div>
+          
+        </div>
+      </div>
+      <div class="ms-2" *ngIf="comment.children && comment.children.length > 0">
+        <app-comment *ngFor="let child of comment.children" [comment]="child"></app-comment>
+        <div *ngIf="comment.children?.length && comment.children[0].open == false" class="ms-5">
+          <a style="text-decoration:underline; cursor: pointer;" (click)="OpenChildren(comment.id)">Xem {{comment.children.length}} phản hồi</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

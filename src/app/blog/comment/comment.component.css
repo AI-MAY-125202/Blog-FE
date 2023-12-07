@@ -1,0 +1,53 @@
+.coment-area {
+    width: 100%;
+    display: none;
+    float: left;
+}
+.comet-avatar {
+    display: inline-block;
+    max-width: 36px;
+    vertical-align: top;
+    width: 36px;
+}
+.we-comment {
+    display: inline-block;
+    padding-left: 5px;
+    position: relative;
+    vertical-align: top;
+    width: 92%;
+}
+.we-reply{
+    text-decoration: none;
+    color: gray;
+}
+.we-reply:hover{
+    color: red;
+}
+.we-comet > li {
+    display: inline-block;
+    width: 100%;
+}
+.we-comment > p {
+    display: inline;
+    font-size: 13.4px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.inline-itms {
+    display: inline-block;
+    width: 100%;
+}
+.inline-itms > a, .inline-itms > span {
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 10px;
+    text-transform: capitalize;
+}
+.inline-itms > a i {
+    margin-right: 3px;
+}
+
+.inline-itms > a span {
+    font-size: 11px;
+}
