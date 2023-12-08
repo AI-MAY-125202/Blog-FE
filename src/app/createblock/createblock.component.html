@@ -7,9 +7,7 @@
                 <img src="	http://127.0.0.1:5500/images/resources/admin.jpg" alt="">
             </figure>
             <div class="newpst-input">
-                <form method="post">
-                    <textarea (ngModel)='news.content' rows="2" placeholder="Share some what you are thinking?"></textarea>
-                </form>
+                <textarea [(ngModel)]="news.content" name="content"  rows="2" placeholder="Share some what you are thinking?"></textarea>
             </div>
             <div class="attachments">
                 <ul>
@@ -21,8 +19,23 @@
                             </label>
                         </span>
                     </li>
+                    <li>
+                        <span class="add-loc">
+                            <select name="type" [(ngModel)]="news.type">
+                                <option value="0">Bài viết</option>
+                                <option value="1">Câu hỏi</option>
+                            </select>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="add-loc">
+                            <select name="idTopic" [(ngModel)]="news.idTopic">
+                                <option *ngFor="let item of listTopic" [value]="item.id">{{ item.name }}</option>
+                            </select>
+                        </span>
+                    </li>
                 </ul>
-                <button class="post-btn" type="submit" data-ripple="">Post</button>
+                <button class="post-btn" type="submit" (click)="onSubmit()" data-ripple="">Post</button>
             </div>
             
         </div>	
@@ -32,48 +45,39 @@
       
 </div>
 <div class="loadMore d-flex justify-content-center">
-    <div class="central-meta item w-50 " style="height: 100vh;">
+    <div *ngFor="let item of listNews" class="central-meta item w-50 ">
         <div class="user-post">
             <div class="friend-info">
                 <figure>
-                    <img src="http://127.0.0.1:5500/images/resources/nearly1.jpg" alt="">
+                    <img [src]="item.avatar" alt="">
                 </figure>
                 <div class="friend-name">
-                   
-                    <ins><a href="time-line.html" title="">Jack Carter</a> Post Album</ins>
-                    <span><i class="fa fa-globe"></i> published: September,15 2020 19:PM </span>
+                    <ins><a >{{ item.username }}</a></ins>
+                    <span><i class="fa fa-globe"></i> published: {{ item.created_at }} </span>
                 </div>
                 <div class="post-meta">
                     <div class="description">
-                        
                         <p>
-                            Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc.
-
+                            {{ item.content }}
                         </p>
                     </div>
-                    <figure>
-                        <img style="border-radius: 0;" src="http://127.0.0.1:5500/images/sponsors.gif" alt="">
-                       
+                    <figure *ngIf="item.image">
+                        <img style="border-radius: 0;" [src]="item.image" alt="">
                     </figure>	
                    
                     <div class="we-video-info">
                         <ul>
-                          
-                          
                             <li >
                                 <span class="comment" title="Comments">
                                     <i class="fa fa-commenting"></i>
                                     <ins>52</ins>
                                 </span>
                             </li>
-
-                        
                         </ul>
-                        
                     </div>
                 </div>
             </div>
 
         </div>
-    </div><!-- album post -->
+    </div>
 </div>

@@ -8,6 +8,7 @@ import { HeaderComponent } from './blog/header/header.component';
 import { CommentTreeComponent } from './blog/comment-tree/comment-tree.component';
 import { PostnewComponent } from './blog/postnew/postnew.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommentTreeComponent,
     PostnewComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

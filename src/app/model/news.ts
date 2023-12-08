@@ -5,4 +5,6 @@ export interface News {
   image?: string;
   file?: File;
   created_at?: Date;
+  username?: string;
+  avatar?: string;
 }
