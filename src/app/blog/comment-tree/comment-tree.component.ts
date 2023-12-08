@@ -10,6 +10,7 @@ import { Comment } from 'src/app/model/coment';
 export class CommentTreeComponent implements OnInit {
   comments!: Comment[];
 
+
   constructor(private commentService: CommentService) {}
 
   ngOnInit(): void {

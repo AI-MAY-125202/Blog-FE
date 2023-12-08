@@ -1,7 +1,7 @@
 <div class="comment-tree">
     <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
   </div>
-  <li class="post-comment">
+  <div class="post-comment">
     <div class="comet-avatar">
       <img src="images/resources/nearly1.jpg" alt="">
     </div>
@@ -30,9 +30,8 @@
             <i class="em em-rage"></i>
             <i class="em em-stuck_out_tongue"></i>
           </div>
+          <button class="btn btn-primary ms-2" type="submit">POST</button>
         </div>
-
-        <button type="submit"></button>
       </form>	
     </div>
-  </li>
+  </div>
