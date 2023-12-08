@@ -6,10 +6,10 @@ import { CreateBlockService } from './createblock.service';
 @Component({
   selector: 'app-createblock',
   templateUrl: './createblock.component.html',
-  styleUrls: ['./createblock.component.css']
+  styleUrls: ['./createblock.component.css'],
 })
 export class CreateblockComponent implements OnInit {
-  constructor(private http: CreateBlockService) { }
+  constructor(private http: CreateBlockService) {}
   listTopic: Topic[] = [];
   listNews: News[] = [];
   news!: News;
@@ -27,5 +27,5 @@ export class CreateblockComponent implements OnInit {
     this.news.file = event.target.files[0];
   }
 
-  onSubmit() { }
+  onSubmit() {}
 }

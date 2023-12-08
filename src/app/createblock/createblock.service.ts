@@ -22,9 +22,9 @@ export class CreateBlockService {
   createNews(news: News): Observable<any> {
     const formData = new FormData();
     formData.append('idTopic', JSON.stringify(news.idTopic));
-    formData.append('content', news.content);
+    formData.append('content', news.content || '');
     formData.append('type', JSON.stringify(news.type));
-    formData.append('file', news.file);
+    formData.append('file', news.file || '');
     return this.http.post<any>(this.apiUrl + 'news/create', formData);
   }
 }

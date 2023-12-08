@@ -7,7 +7,7 @@ import { CreateblockComponent } from './createblock/createblock.component';
 import { HeaderComponent } from './blog/header/header.component';
 import { CommentTreeComponent } from './blog/comment-tree/comment-tree.component';
 import { PostnewComponent } from './blog/postnew/postnew.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,13 +15,10 @@ import { PostnewComponent } from './blog/postnew/postnew.component';
     CreateblockComponent,
     HeaderComponent,
     CommentTreeComponent,
-    PostnewComponent
+    PostnewComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

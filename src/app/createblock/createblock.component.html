@@ -8,7 +8,7 @@
             </figure>
             <div class="newpst-input">
                 <form method="post">
-                    <textarea rows="2" placeholder="Share some what you are thinking?"></textarea>
+                    <textarea (ngModel)='news.content' rows="2" placeholder="Share some what you are thinking?"></textarea>
                 </form>
             </div>
             <div class="attachments">
@@ -17,7 +17,7 @@
                         <span class="add-loc">
                             <i class="fa-regular fa-image"></i>
                             <label class="fileContainer">
-                                <input type="file">
+                                <input type="file"  (change)="onFileSelected($event)">
                             </label>
                         </span>
                     </li>
