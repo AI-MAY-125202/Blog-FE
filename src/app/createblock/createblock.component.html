@@ -6,9 +6,13 @@
             <figure>
                 <img src="	http://127.0.0.1:5500/images/resources/admin.jpg" alt="">
             </figure>
-            <div class="newpst-input">
-                <textarea [(ngModel)]="news.content" name="content"  rows="2" placeholder="Share some what you are thinking?"></textarea>
+            <div class="newpst-input mb-3">
+                <textarea [(ngModel)]="news.content" name="content"  rows="2" placeholder="Are you have any question"></textarea>
+                <div>
+                    <img [src]="imageUrl" alt="">
+                </div>
             </div>
+
             <div class="attachments">
                 <ul>
                     <li>
@@ -22,10 +26,10 @@
                     <li>
                         <span class="add-loc">
                             <select name="type" [(ngModel)]="news.type">
-                                <option value="0">Bài viết</option>
-                                <option value="1">Câu hỏi</option>
+                                <option value="1">News</option>
+                                <option value="0">Question</option>
                             </select>
-                        </span>
+                        </span> 
                     </li>
                     <li>
                         <span class="add-loc">
@@ -45,39 +49,41 @@
       
 </div>
 <div class="loadMore d-flex justify-content-center">
-    <div *ngFor="let item of listNews" class="central-meta item w-50 ">
-        <div class="user-post">
-            <div class="friend-info">
-                <figure>
-                    <img [src]="item.avatar" alt="">
-                </figure>
-                <div class="friend-name">
-                    <ins><a >{{ item.username }}</a></ins>
-                    <span><i class="fa fa-globe"></i> published: {{ item.created_at }} </span>
-                </div>
-                <div class="post-meta">
-                    <div class="description">
-                        <p>
-                            {{ item.content }}
-                        </p>
+    <div class="w-50">
+        <div *ngFor="let item of listNews" class="central-meta item  ">
+            <div class="user-post">
+                <div class="friend-info">
+                    <figure>
+                        <img [src]="apiUrl + item.avatar" alt="">
+                    </figure>
+                    <div class="friend-name">
+                        <ins><a >{{ item.username }}</a></ins>
+                        <span><i class="fa fa-globe"></i> published: {{ item.created_at | date:'dd/MM/yyyy hh:mm a' }} || topic: {{ item.topicname }} || type: {{ item.type == 0? 'Question':'News' }} </span>
                     </div>
-                    <figure *ngIf="item.image">
-                        <img style="border-radius: 0;" [src]="item.image" alt="">
-                    </figure>	
-                   
-                    <div class="we-video-info">
-                        <ul>
-                            <li >
-                                <span class="comment" title="Comments">
-                                    <i class="fa fa-commenting"></i>
-                                    <ins>52</ins>
-                                </span>
-                            </li>
-                        </ul>
+                    <div class="post-meta">
+                        <div class="description">
+                            <p>
+                                {{ item.content }}
+                            </p>
+                        </div>
+                        <figure *ngIf="item.image">
+                            <img style="border-radius: 0;" [src]="apiUrl + item.image" alt="">
+                        </figure>	
+                       
+                        <div class="we-video-info">
+                            <ul>
+                                <li >
+                                    <span class="comment" title="Comments">
+                                        <i class="fa fa-commenting"></i>
+                                        <ins>52</ins>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+    
             </div>
-
         </div>
     </div>
 </div>

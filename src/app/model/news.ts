@@ -1,5 +1,6 @@
 export interface News {
-  idTopic?: number;
+  idTopic?: string;
+  idUser?: number;
   type?: number;
   content?: string;
   image?: string;
@@ -7,4 +8,5 @@ export interface News {
   created_at?: Date;
   username?: string;
   avatar?: string;
+  topicname?: string;
 }

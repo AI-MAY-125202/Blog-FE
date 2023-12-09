@@ -20,11 +20,15 @@ export class CreateBlockService {
   }
 
   createNews(news: News): Observable<any> {
+    debugger;
     const formData = new FormData();
-    formData.append('idTopic', JSON.stringify(news.idTopic));
-    formData.append('content', news.content || '');
+    formData.append('idTopic', news?.idTopic || '');
+    formData.append('content', news.content?.trim() || '');
     formData.append('type', JSON.stringify(news.type));
-    formData.append('file', news.file || '');
+    if (news.file) {
+      formData.append('files', news.file);
+    }
+    formData.append('idUser', JSON.stringify(1));
     return this.http.post<any>(this.apiUrl + 'news/create', formData);
   }
 }

@@ -13,26 +13,38 @@ export class CreateblockComponent implements OnInit {
   listTopic: Topic[] = [];
   listNews: News[] = [];
   news: News = { type: 0 };
+  apiUrl = 'http://localhost:3000/images/';
+  imageUrl: string | ArrayBuffer | null = null;
   ngOnInit(): void {
     this.http.getNews().subscribe((res: any) => {
-      console.log(res);
       this.listNews = res;
     });
     this.http.getTopic().subscribe((res: any) => {
-      console.log(res);
       this.listTopic = res;
+      this.news.idTopic = JSON.stringify(this.listTopic[0].id);
     });
   }
   onFileSelected(event: any): void {
-    this.news.file = event.target.files[0];
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.news.file = input.files[0];
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imageUrl = reader.result;
+      };
+      reader.readAsDataURL(this.news.file);
+    }
   }
 
   onSubmit() {
     debugger;
-    if (this.news.content != null) {
+    if (this.news.content?.trim()) {
       this.http.createNews(this.news).subscribe((res) => {
-        console.log(res);
+        this.listNews.unshift(res);
       });
+    } else {
+      alert('Bạn chưa nhập nôi dung');
     }
   }
 }

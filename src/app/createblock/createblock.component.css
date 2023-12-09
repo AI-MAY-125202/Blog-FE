@@ -63,7 +63,7 @@ img {
 .newpst-input {
     display: inline-block;
     vertical-align: top;
-    width: 90%;
+    width: 100%;
 }
 .newpst-input > form {
     display: inline-block;
