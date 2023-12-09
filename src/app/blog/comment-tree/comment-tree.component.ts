@@ -32,8 +32,7 @@ export class CommentTreeComponent implements OnInit {
         this.comments.push(res)
         this.content = "";
       })
-    }
-    
+    } 
   }
   Add(event:any){
     console.log(event)
