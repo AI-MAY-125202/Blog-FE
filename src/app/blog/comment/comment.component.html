@@ -8,8 +8,8 @@
       </div>
       <div class="we-comment">
         <div class="btn "style="background-color: rgb(222, 224, 224);">
-          <a class="fw-bold" style="text-decoration: none; color: black; float: left;">Trần Thảo</a><br>
-          <p style="margin-bottom: 0;">{{ comment.text }}</p>
+          <a class="fw-bold" style="text-decoration: none; color: black; float: left;">{{ comment.username }}</a><br>
+          <p style="margin-bottom: 0;">{{ comment.content }}</p>
         </div>
         <div class="inline-itms">
           <span style="cursor: pointer;">Phản hồi</span>
@@ -17,7 +17,7 @@
         </div>
         <div *ngIf="openreply" class="post-comment">
           <div class="comet-avatar">
-            <img src="images/resources/nearly1.jpg" alt="">
+            <img width="30" height="30" src="/assets/image/doraemon.jpg" alt="">
           </div>
           <div class="post-comt-box">
             <form >
@@ -44,8 +44,8 @@
         </div>
       </div>
       <div class="ms-2" *ngIf="comment.children && comment.children.length > 0">
-        <app-comment *ngFor="let child of comment.children" [comment]="child"></app-comment>
-        <div *ngIf="comment.children?.length && comment.children[0].open == false" class="ms-5">
+        <app-comment *ngFor="let child of comment.children" [comment]="child" [userId]="userId"></app-comment>
+        <div *ngIf="comment.children?.length && comment.children[0].open == 0" class="ms-5">
           <a style="text-decoration:underline; cursor: pointer;" (click)="OpenChildren()">Xem {{comment.children.length}} phản hồi</a>
         </div>
       </div>

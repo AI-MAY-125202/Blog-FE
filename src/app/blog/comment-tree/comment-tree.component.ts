@@ -9,7 +9,7 @@ import { Comment } from 'src/app/model/coment';
 })
 export class CommentTreeComponent implements OnInit {
   comments!: Comment[];
-
+  userId? : number = 1;
 
   constructor(private commentService: CommentService) {}
 
