@@ -18,6 +18,7 @@ export class CreateblockComponent implements OnInit {
   ngOnInit(): void {
     this.http.getNews().subscribe((res: any) => {
       this.listNews = res;
+      console.log(this.listNews)
     });
     this.http.getTopic().subscribe((res: any) => {
       this.listTopic = res;

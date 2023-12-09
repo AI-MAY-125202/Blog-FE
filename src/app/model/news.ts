@@ -1,4 +1,5 @@
 export interface News {
+  id?:number,
   idTopic?: string;
   idUser?: number;
   type?: number;

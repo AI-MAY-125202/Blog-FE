@@ -1,13 +1,13 @@
 <div class="comment-tree">
-    <app-comment *ngFor="let comment of comments" [comment]="comment" [userId]="userId"></app-comment>
+    <app-comment *ngFor="let comment of comments" [comment]="comment" [userId]="userId" (onChange)="Add($event)"></app-comment>
   </div>
   <div class="post-comment">
     <div class="comet-avatar">
       <img width="30" height="30" src="/assets/image/doraemon.jpg" alt="">
     </div>
     <div class="post-comt-box">
-      <form method="post">
-        <textarea placeholder="Post your comment"></textarea>
+      <form >
+        <textarea [(ngModel)]="content" name="content" placeholder="Post your comment"></textarea>
         <div class="add-smiles">
           <div class="uploadimage">
             <i class="fa fa-image"></i>
@@ -23,7 +23,7 @@
             <i class="em em-laughing"></i>
             <i class="em em-kissing_heart"></i>
           </div>
-          <button class="btn btn-primary ms-2" type="submit">POST</button>
+          <button (click)="Comment()" class="btn btn-primary ms-2" >POST</button>
         </div>
       </form>	
     </div>

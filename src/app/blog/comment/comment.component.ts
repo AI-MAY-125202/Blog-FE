@@ -1,4 +1,4 @@
-import { Component, Input, PipeTransform  } from '@angular/core';
+import { Component, Input, Output, PipeTransform,EventEmitter  } from '@angular/core';
 import { Comment, CommentCreate } from 'src/app/model/coment';
 import { CommentService } from './comment.service';
 
@@ -11,6 +11,7 @@ export class CommentComponent {
   constructor(private http: CommentService) {}
   @Input() comment!: Comment;
   @Input() userId?: number;
+  @Output() onChange = new EventEmitter<Comment>()
   openreply : boolean = false;
   commentCreate : CommentCreate = {};
   content : string = "";
@@ -33,9 +34,14 @@ export class CommentComponent {
       this.commentCreate.content = this.content;
       this.commentCreate.idNews = this.comment.idNews;
       this.commentCreate.open = 0;
-      console.log(this.commentCreate)
       this.http.createNews(this.commentCreate).subscribe(res=>{
-        console.log(res);
+        if(!this.comment.children){
+          this.comment.children = []
+        }
+        this.comment.children?.push(res)
+        this.onChange.emit(this.comment)
+        this.content = "";
+        this.OpenChildren()
       })
     }
     
